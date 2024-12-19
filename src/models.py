@@ -18,11 +18,14 @@ class Car(BaseModel):
     price: Decimal
     date_start: datetime
     status: CarStatus
-
+    
     def index(self) -> str:
         return self.vin
-
-
+    
+    def to_string(self):
+        return f"{self.vin}; {self.model}; {self.price}; {self.date_start.isoformat()}; {self.status}"
+    
+    
 class Model(BaseModel):
     id: int
     name: str
@@ -30,6 +33,9 @@ class Model(BaseModel):
 
     def index(self) -> str:
         return str(self.id)
+    
+    def to_string(self):
+        return f"{self.id}; {self.name}; {self.brand}"
 
 
 class Sale(BaseModel):
@@ -40,6 +46,9 @@ class Sale(BaseModel):
 
     def index(self) -> str:
         return self.car_vin
+    
+    def to_string(self):
+        return f"{self.sales_number}; {self.car_vin}; {self.sales_date.isoformat()}; {self.cost}"
 
 
 class CarFullInfo(BaseModel):
