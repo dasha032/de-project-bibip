@@ -1,8 +1,9 @@
-from collections import defaultdict
-from decimal import Decimal
-from datetime import datetime
-from models import Car, CarFullInfo, CarStatus, Model, ModelSaleStats, Sale
 import os
+from collections import defaultdict
+from datetime import datetime
+from decimal import Decimal
+
+from models import Car, CarFullInfo, CarStatus, Model, ModelSaleStats, Sale
 
 
 class CarService:
